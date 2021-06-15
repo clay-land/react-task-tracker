@@ -6,7 +6,7 @@ const Header = ({ title }) => {
   return (
     <header className='header'>
       <h1>{title}</h1>
-      <Button color= '#1da586' text='Hello' />
+      <Button color= '#1da586' text='Add' />
     </header>
     )
 }
