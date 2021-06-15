@@ -1,10 +1,19 @@
+import { useState } from 'react'
 import Header from './components/Header'
+import Tasks from './components/Tasks'
 
 
 const App = () => {
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      text: "Learn React"
+    }
+  ])
   return (
     <div className="container">
       <Header/>
+      <Tasks tasks={tasks}/>
     </div>
   );
 }
