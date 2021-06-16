@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,8 +7,15 @@
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 300;
+  font-family: 'Caveat', cursive;
+  font-weight: 400;
+  color: rgba(251, 247, 245, 0.9);
+  font-size: 20px;
+}
+
+body p {
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
 
@@ -17,9 +24,16 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 7px solid silver;
   padding: 30px;
   border-radius: 5px;
+  background-image: url("./assets/blackboard.jpg");
+  background-size: 1000px 600px;
+  box-shadow: 2px 2px 8px grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .header {
@@ -32,16 +46,18 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background-color:rgba(255, 255, 255, 0.1);
+  color: rgba(251, 247, 245, 0.8);
   border: none;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 24px;
   font-family: inherit;
+  font-weight: bold;
+  box-shadow: 0px 0px 20px rgba(251, 247, 245, 0.23);
 }
 
 .btn:focus {
@@ -58,20 +74,28 @@ body {
 }
 
 .task {
-  background: #f4f4f4;
-  margin: 5px;
+  background-color:rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 20px rgba(251, 247, 245, 0.23);
+  margin: 16px 0;
   padding: 10px 20px;
   cursor: pointer;
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  background-color:rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 25px rgba(251, 247, 245, 0.46);
+  border-radius: 10px;
 }
 
 .task h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 24px;
+}
+
+.task h4 {
+  font-size: 20px;
 }
 
 .add-form {
@@ -84,29 +108,54 @@ body {
 
 .form-control label {
   display: block;
+  font-size: 20px;
 }
 
 .form-control input {
+  border: none;
   width: 100%;
   height: 40px;
   margin: 5px;
   padding: 3px 7px;
-  font-size: 17px;
+  font-size: 24px;
+  background-color:rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 20px rgba(251, 247, 245, 0.12);
+  outline: none;
+  font-family: inherit;
+  color: rgba(251, 247, 245, 0.9);
 }
 
 .form-control-check {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .form-control-check label {
-  flex: 1;
+  margin-right: 40px;
 }
 
 .form-control-check input {
-  flex: 2;
+  width: 0%;
   height: 20px;
+  -webkit-appearance: none;
+  background-color: rgba(255, 255, 255, 0.13);
+  box-shadow: 0px 0px 20px rgba(251, 247, 245, 0.48);
+  padding: 9px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.form-control-check input:checked {
+  color: rgba(251, 247, 245, 0.9);
+}
+
+.form-control-check input:checked:after {
+  content: '\2714';
+  font-size: 16px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: rgba(251, 247, 245, 0.9);
 }
 
 footer {
@@ -114,5 +163,22 @@ footer {
   text-align: center;
 }
 
+body a {
+  text-decoration: none;
+  color: rgba(251, 247, 245, 0.9);
+  background-color:rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 20px rgba(251, 247, 245, 0.23);
+  padding: 4px 8px;
+}
+
 .about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+.about a {
+  /*display: block;*/
+  margin: 16px auto;
+
 }

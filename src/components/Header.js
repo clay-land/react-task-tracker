@@ -11,14 +11,14 @@ const Header = ({ title, onAdd, buttonAdd }) => {
     <header className='header'>
       <h1>{title}</h1>
       {location.pathname === '/' && (
-      <Button color= '#1da586' text={buttonAdd ? (<FaMinus />) : (<FaPlus />)} onClick={onAdd} />
+      <Button color= 'rgba(255, 255, 255, 0.1)' text={buttonAdd ? (<FaMinus />) : (<FaPlus />)} onClick={onAdd} />
       )}
     </header>
     )
 }
 
 Header.defaultProps = {
-  title: 'Task Tracker',
+  title: 'Chalkboard Tracker',
 }
 
 Header.propTypes = {
