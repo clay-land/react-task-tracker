@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
+import { FaPlus, FaMinus } from 'react-icons/fa'
 
 
-const Header = ({ title }) => {
+const Header = ({ title, onAdd, buttonAdd }) => {
   return (
     <header className='header'>
       <h1>{title}</h1>
-      <Button color= '#1da586' text='Add' />
+      <Button color= '#1da586' text={buttonAdd ? (<FaMinus />) : (<FaPlus />)} onClick={onAdd} />
     </header>
     )
 }

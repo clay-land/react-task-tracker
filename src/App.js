@@ -1,12 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-  ])
+  const [showAddTask, setShowAddTask] = useState(true)
+
+  const [tasks, setTasks] = useState([])
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks()
+      setTasks(tasksFromServer)
+    }
+    getTasks()
+  }, [])
+
+
+  // Fetch tasks
+  const fetchTasks = async () => {
+    const response = await fetch('http://localhost:5000/tasks')
+    const data = await response.json()
+
+    return data
+  }
 
   // Add task
   const addTask = (task) => {
@@ -27,8 +45,8 @@ const App = () => {
   }
   return (
     <div className="container">
-      <Header/>
-      <AddTask onAdd={addTask} />
+      <Header onAdd={() => setShowAddTask(!showAddTask)} buttonAdd={showAddTask} />
+      {showAddTask && <AddTask onSave={addTask} />}
       {tasks.length > 0 ?
         (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />)
         : ("No tasks currently")}
